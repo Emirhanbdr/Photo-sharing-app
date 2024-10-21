@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/kullaniciGiris">
+
+    <fragment
+        android:id="@+id/kullaniciGiris"
+        android:name="com.emirhan.fotografpaylasma.view.kullaniciGiris"
+        android:label="fragment_kullanici_giris"
+        tools:layout="@layout/fragment_kullanici_giris" >
+        <action
+            android:id="@+id/action_kullaniciGiris_to_feedArayuz"
+            app:destination="@id/feedArayuz" />
+    </fragment>
+    <fragment
+        android:id="@+id/feedArayuz"
+        android:name="com.emirhan.fotografpaylasma.view.feedArayuz"
+        android:label="fragment_feed_arayuz"
+        tools:layout="@layout/fragment_feed_arayuz" >
+        <action
+            android:id="@+id/action_feedArayuz_to_yuklemeEkrani"
+            app:destination="@id/yuklemeEkrani" />
+        <action
+            android:id="@+id/action_feedArayuz_to_kullaniciGiris"
+            app:destination="@id/kullaniciGiris" />
+    </fragment>
+    <fragment
+        android:id="@+id/yuklemeEkrani"
+        android:name="com.emirhan.fotografpaylasma.view.yuklemeEkrani"
+        android:label="fragment_yukleme_ekrani"
+        tools:layout="@layout/fragment_yukleme_ekrani" >
+        <action
+            android:id="@+id/action_yuklemeEkrani_to_feedArayuz"
+            app:destination="@id/feedArayuz" />
+    </fragment>
+</navigation>
